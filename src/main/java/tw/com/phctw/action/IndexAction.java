@@ -22,10 +22,10 @@ public class IndexAction extends ActionSupport{
         return "success";
     }
 
-	@Action(value = "second", results = {
-			@Result(name="success",location="/WEB-INF/views/HelloWorld.jsp")})
-	public String second() {
-		System.out.println("exec");
-        return "success";
-    }
+//	@Action(value = "second", results = {
+//			@Result(name="success",location="/WEB-INF/views/HelloWorld.jsp")})
+//	public String second() {
+//		System.out.println("exec");
+//        return "success";
+//    }
 } 

@@ -14,6 +14,37 @@
 <!-- 				<result name="success">index.jsp</result> -->
 <!-- 			</action> -->
 <!-- 		</package> -->
+
+<!-- 指定由spring負責action物件的建立 -->
+<constant name="struts.objectFactory" value="spring" />
+<!-- 所有匹配*.action的請求都由struts2處理 -->
+<constant name="struts.action.extension" value="action" />
+<!-- 是否啟用開發模式 -->
+<constant name="struts.devMode" value="true" />
+<!-- struts配置檔案改動後，是否重新載入 -->
+<constant name="struts.configuration.xml.reload" value="true" />
+<!-- 設定瀏覽器是否快取靜態內容 -->
+<constant name="struts.serve.static.browserCache" value="false" />
+<!-- 請求引數的編碼方式 -->
+<constant name="struts.i18n.encoding" value="utf-8" />
+<!-- 每次HTTP請求系統都重新載入資原始檔，有助於開發 -->
+<constant name="struts.i18n.reload" value="true" />
+<!-- 檔案上傳最大值 -->
+<constant name="struts.multipart.maxSize" value="104857600" />
+<!-- 讓struts2支援動態方法呼叫 -->
+<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+<!-- Action名稱中是否還是用斜線 -->
+<constant name="struts.enable.SlashesInActionNames" value="false" />
+<!-- 允許標籤中使用表示式語法 -->
+<constant name="struts.tag.altSyntax" value="true" />
+<!-- 對於WebLogic,Orion,OC4J此屬性應該設定成true -->
+<constant name="struts.dispatcher.parametersWorkaround" value="false" />
+
+<package name="basePackage" extends="struts-default">
+	<global-allowed-methods>TestStruts</global-allowed-methods>
+</package>
+
+
 	</struts>
 
 

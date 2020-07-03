@@ -3,13 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
-	<script>
- 		window.location.href = 'home.action'; 
- 	</script>
+<meta charset="UTF-8">
+<title>Save page</title>
 </head>
 <body>
-
+	<h3>Save Ok!</h3>
 </body>
 </html>

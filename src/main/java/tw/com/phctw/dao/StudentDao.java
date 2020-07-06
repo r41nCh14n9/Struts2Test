@@ -7,19 +7,19 @@ import tw.com.phctw.entity.Student;
 
 
 public interface StudentDao {
-	Student getStudentBySid(Long sid);
+	Student getStudentBySid(Long sid) throws Exception;
 	
-	List<Student> getAllStudents();
+	List<Student> getAllStudents()throws Exception;
 
-	boolean deleteStudentBySid(Long sid);
+	boolean deleteStudentBySid(Long sid)throws Exception;
 
-	boolean updateStudent(Student student);
+	boolean updateStudent(Student student)throws Exception;
 
-	boolean insertStudent(Student student);
+	boolean insertStudent(Student student)throws Exception;
 	
-	Student getStudentForLogin(Student s);
+	Student getStudentForLogin(Student s)throws Exception;
 	
-	Student getStudentBySacc(String sacc);
+	Student getStudentBySacc(String sacc)throws Exception;
 	
-	public Student getStudentBySaccAndSmail(String sacc, String smail);
+	public Student getStudentBySaccAndSmail(String sacc, String smail)throws Exception;
 }

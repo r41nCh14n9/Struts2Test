@@ -11,7 +11,7 @@ public class ForgetPwdMail {
 	public void send(String toAddr, String newPwd) {
 		String subject = "Forget Password";
 		String content = "Dear 顧客您好,您的新密碼是 : " + newPwd
-		+ "<p /><a href='http://localhost:8080/HibernatemvcTest/'>點選網址返回登入</a>";
+		+ "<p /><a href='http://localhost:8080/Struts2Test/login'>點選網址返回登入</a>";
 		new SendMail().sendMail(toAddr,subject, content);
 	}
 	

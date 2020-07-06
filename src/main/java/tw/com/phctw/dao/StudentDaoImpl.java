@@ -12,26 +12,28 @@ import tw.com.phctw.entity.Student;
 
 
 @Repository(value = "studentDao")
-public class StudentDaoImpl implements StudentDao {
+public class StudentDaoImpl implements StudentDao{
 	
 	@Autowired
     private  SessionFactory sessionFactory;
 
 
 	@Override
-	public Student getStudentBySid(Long sid) {
+	public Student getStudentBySid(Long sid) throws Exception{
+		Student student=null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
-			return session.get(Student.class, sid);
+			student = session.get(Student.class, sid);
 		} catch (Exception e) {
 			System.out.println("getStudentBySid : "+e);
+			throw e;
 		}
-		return null;
+		return student;
 	}
 
 	@Override
-	public List<Student> getAllStudents() {
-		String hql = "FROM Student";
+	public List<Student> getAllStudents() throws Exception{
+		String hql = "FROM Student order by sid";
 		List<Student> students = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
@@ -39,13 +41,13 @@ public class StudentDaoImpl implements StudentDao {
 			students = query.list();
 		} catch (Exception e) {
 			System.out.println("getAllStudents : "+e);
-			return null;
+			throw e;
 		}
 		return students;
 	}
 
 	@Override
-	public boolean deleteStudentBySid(Long sid) {
+	public boolean deleteStudentBySid(Long sid) throws Exception{
 		String hql = "delete from Student where SID = "+ sid ;
 		try {
 			Session session = sessionFactory.getCurrentSession();
@@ -59,7 +61,7 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	@Override
-	public boolean updateStudent(Student student) {
+	public boolean updateStudent(Student student)throws Exception {
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			session.update(student);
@@ -71,7 +73,7 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	@Override
-	public boolean insertStudent(Student student) {
+	public boolean insertStudent(Student student) throws Exception{
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			session.save(student);
@@ -84,7 +86,7 @@ public class StudentDaoImpl implements StudentDao {
 
 	//login
 	@Override
-	public Student getStudentForLogin(Student s) {
+	public Student getStudentForLogin(Student s)throws Exception {
 		String hql = "from Student where SACC = :sacc and SPWD = :spwd";
 //		String hql = "select from Student4 where SACC = "+s.getSacc()+" and SPWD = "+s.getSpwd();
 		Student student = null;
@@ -105,7 +107,7 @@ public class StudentDaoImpl implements StudentDao {
 	
 	//register
 	@Override
-	public Student getStudentBySacc(String sacc) {
+	public Student getStudentBySacc(String sacc)throws Exception {
 		String hql = "from Student where Sacc = :sacc";
 		Student student = null;
 		try {
@@ -122,7 +124,7 @@ public class StudentDaoImpl implements StudentDao {
 	
 	//forget password
 	@Override
-	public Student getStudentBySaccAndSmail(String sacc, String smail) {
+	public Student getStudentBySaccAndSmail(String sacc, String smail)throws Exception {
 		String hql = "from Student where Sacc = :sacc and Smail = :smail";
 		Student student = null;
 		try {
@@ -136,10 +138,5 @@ public class StudentDaoImpl implements StudentDao {
 		}
 		return student;
 	}
-	//reset password
-	//給service做...
-	
-	
-	
 	
 }

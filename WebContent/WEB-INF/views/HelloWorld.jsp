@@ -9,7 +9,7 @@
   <body>
     <h1>Hello World!</h1>
 <!--     <a href="index.action">home</a> -->
-	<h2>Hello~<s:property value="bean.s.sname"/> ~~</h2>
+	<h2>Hello~<s:property value="s.sname"/> ~~</h2>
 	
 
   </body>

@@ -18,7 +18,7 @@
 <!-- 指定由spring負責action物件的建立 -->
 <constant name="struts.objectFactory" value="spring" />
 <!-- 所有匹配*.action的請求都由struts2處理 -->
-<constant name="struts.action.extension" value="action" />
+<constant name="struts.action.extension" value="," />
 <!-- 是否啟用開發模式 -->
 <constant name="struts.devMode" value="true" />
 <!-- struts配置檔案改動後，是否重新載入 -->
@@ -41,9 +41,14 @@
 <constant name="struts.dispatcher.parametersWorkaround" value="false" />
 
 <package name="basePackage" extends="struts-default">
-	<global-allowed-methods>TestStruts</global-allowed-methods>
 </package>
-
+<!-- json輸出 -->
+<!-- <package name="json" extends="json-default"> -->
+        
+<!--         <action name="accCheck" class="tw.com.phctw.action.RegisterAction" method="accCheck"> -->
+<!--             <result type="json" /> -->
+<!--         </action> -->
+<!-- </package> -->
 
 	</struts>
 

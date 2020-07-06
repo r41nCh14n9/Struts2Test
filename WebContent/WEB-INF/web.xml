@@ -7,9 +7,7 @@ id="WebApp_ID" version="4.0">
  	<display-name>Struts2Test App</display-name>
 	
 	<welcome-file-list>
-		
 	    <welcome-file>index.jsp</welcome-file>
-	    <welcome-file>/WEB-INF/views/home.jsp</welcome-file>
 	</welcome-file-list>
 	
 	

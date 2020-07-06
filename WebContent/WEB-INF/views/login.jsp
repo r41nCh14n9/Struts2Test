@@ -7,26 +7,30 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Login Page</title>
 	</head>
-	<body>	
-	
-	<s:form action="Welcome" namespace="/">
-		<s:textfield name="bean.student.sacc" label="帳號 " />
-		<s:password name="bean.student.spwd" label="密碼 "/>
-		<s:submit value="submit"/>
-	</s:form>
-
-
-<!-- 	<table style="text-align: center;"> -->
-<!-- 		<tr> -->
-<!-- 			<td><a href="forgetPwd">忘記密碼</a><br></td> -->
-<!-- 			<td><form:button type="submit">Sign in</form:button></td> -->
-<!-- 		</tr> -->
-<!-- 		<tr> -->
-<!-- 			<td colspan="2"><a href="/HibernatemvcTest/home">Home</a></td> -->
-<!-- 		</tr> -->
-<!-- 	</table> -->
-
-
-
-</body>
+	<body>
+		<s:form action="loginProcess" theme="simple" namespace="/">
+			<table style="text-align: center;" >
+				<tr>
+					<td><s:label for="sacc">Account Name:</s:label></td>
+					<td><s:textfield name="studentIn.sacc" id="sacc"/></td>
+				</tr>
+				<tr>
+					<td><s:label for="spwd">Student Password:</s:label> </td>
+					<td><s:password name="studentIn.spwd" id="spwd"/></td>
+				</tr>
+				<tr>
+					<td><a href="forgetPwd">忘記密碼</a></td>
+					<td><s:submit value="submit" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><a href="home">Home</a> </td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>${message}</td>
+				</tr>
+			</table>
+		</s:form>
+	</body>
 </html>
